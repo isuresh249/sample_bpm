@@ -1,0 +1,13 @@
+#Thu Feb 19 11:47:55 IST 2015
+publishing.type=Copy_Files_Only
+application.name=test_bpm
+inherit.acl=true
+adapter.version=8.1
+module.type=com.savvion.studio.designer.module.bpm
+publish.webservice=false
+application.mainprocessname=test_bpm
+module.id=fb466c7c-4d77-4fcb-a58d-cf1f2575b91a
+module.version=8
+application.mainappfile=test_bpm/processtemplates/test_bpm.spt
+module.name=test_bpm
+application.root=test_bpm

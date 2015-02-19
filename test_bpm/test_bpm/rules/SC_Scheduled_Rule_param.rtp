@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE parameters SYSTEM "resources/ruleParams.dtd">
+<parameters>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        label="Description" name="description" type="description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[<h1>Schedule / Defer Action</h1>
+                  Actions that need to be executed on or after a particular date/time can be
+                  scheduled and executed automatically by event-based rule engine without
+                  manual intervention.
+                  ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="dsc_description" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[<html><body>
+  Description of the <b>Schedule/Defer Action</b> rule template.
+  </body> </html>
+        ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.CompositeMacro"
+        label="Re-schedule Till" name="time_constraint" type="composite">
+        <property name="condition"><![CDATA[?]]></property>
+        <vector-property name="groupComponents">
+            <vector-elem><![CDATA[indefinite]]></vector-elem>
+            <vector-elem><![CDATA[nooftimes]]></vector-elem>
+            <vector-elem><![CDATA[period]]></vector-elem>
+        </vector-property>
+        <property name="selectedMacro"><![CDATA[indefinite]]></property>
+        <macro class="com.savvion.rulewizard.data.DummyMacro"
+            label="Indefinite" name="indefinite" type="dummy"/>
+        <macro class="com.savvion.rulewizard.data.DateMacro"
+            label="Date" name="period" type="date">
+            <property name="minute"><![CDATA[27]]></property>
+            <property name="second"><![CDATA[22]]></property>
+            <property name="month"><![CDATA[1]]></property>
+            <property name="year"><![CDATA[2015]]></property>
+            <property name="hour"><![CDATA[14]]></property>
+            <property name="day"><![CDATA[19]]></property>
+        </macro>
+        <macro class="com.savvion.rulewizard.data.MacroString"
+            label="No of times" name="nooftimes" type="text">
+            <property name="verify"><![CDATA[true]]></property>
+            <property name="stringValue"><![CDATA[]]></property>
+            <property name="number"><![CDATA[true]]></property>
+            <property name="origValue"><![CDATA[]]></property>
+        </macro>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.Varname" label="   Name"
+        name="program" type="varname">
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[Scheduled_Rule]]></property>
+        <property name="origValue"><![CDATA[Scheduled Rule]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="dsc_program" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+  <html><body>
+  Choose the name of your monitoring program
+  </body></html>
+  ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.ProcessMacro"
+        label="Process template" name="target" type="process">
+        <argument processIndex="0"/>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="dsc_target" type="help-description">
+        <property name="skipStatus"><![CDATA[SKIP_IF_ALONE]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+  <html><body>
+  Choose a process template file
+  </body></html>
+  ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DateMacro"
+        name="generate_date" type="date">
+        <property name="minute"><![CDATA[27]]></property>
+        <property name="second"><![CDATA[22]]></property>
+        <property name="month"><![CDATA[1]]></property>
+        <property name="year"><![CDATA[2015]]></property>
+        <property name="hour"><![CDATA[14]]></property>
+        <property name="day"><![CDATA[19]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="dsc_period" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+  <html><body>
+  The Name to use for the rules which will be generated by this wizard instance.
+  Any text without whitespace can be entered here.<br>
+  The monitoring time window after which the specified action(s) should excute.<br>
+  Time can also be specified as Business Time.
+  <br>If Duration is selected and <b>Business time</b> is checked then user needs to ensure that there is system calendar set
+  before deploying this application.
+  </body></html>
+  ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.LabelMacro" name="label" type="label">
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[Applying Schedule to test_bpm]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+        <reference name="processTemplateName" value="target.processTemplateName"/>
+    </macro>
+    <macro class="com.savvion.rulewizard.action.SendMailActionData"
+        name="sendmail" type="sendmail-action">
+        <property name="to"><![CDATA[]]></property>
+        <property name="body"><![CDATA[]]></property>
+        <property name="subject"><![CDATA[]]></property>
+        <property name="showPerformerPanel"><![CDATA[false]]></property>
+        <property name="from"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.action.AlertActionData"
+        name="alertaction" type="alert-action"/>
+    <macro class="com.savvion.rulewizard.action.CreatePTActionData"
+        name="install" type="creatept-action">
+        <property name="selectedRadio"><![CDATA[radCurrentProcess]]></property>
+        <property name="showSelectProcess"><![CDATA[true]]></property>
+        <property name="ptnameValue"><![CDATA[]]></property>
+        <property name="stringValue"><![CDATA[]]></property>
+        <property name="showDSProcess"><![CDATA[false]]></property>
+        <property name="showCurrentProcess"><![CDATA[false]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.action.CreatePIActionData"
+        name="createpi" type="createpi-action">
+        <property name="selectedRadio"><![CDATA[radCurrentProcess]]></property>
+        <property name="showSelectProcess"><![CDATA[true]]></property>
+        <property name="ptnameValue"><![CDATA[]]></property>
+        <property name="stringValue"><![CDATA[]]></property>
+        <property name="showDSProcess"><![CDATA[false]]></property>
+        <property name="showCurrentProcess"><![CDATA[true]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.action.DBAdapterActionData"
+        name="db_action" type="dbmanagedadapter-action"/>
+    <macro class="com.savvion.rulewizard.action.AggregateActionData"
+        label="Actions" name="action" type="action-collection">
+        <property name="verify"><![CDATA[true]]></property>
+        <reference name="workstepName" value="workstep.workstepName"/>
+        <reference name="target-process" value="target"/>
+        <macro class="com.savvion.rulewizard.action.CreatePIActionData"
+            component-name="createpi" label="Create Process Instance"
+            name="createpi_NO_1" type="createpi-action">
+            <property name="selectedRadio"><![CDATA[radCurrentProcess]]></property>
+            <property name="listSelectedValue"><![CDATA[CREATOR]]></property>
+            <property name="showSelectProcess"><![CDATA[true]]></property>
+            <property name="ptnameValue"><![CDATA[]]></property>
+            <property name="stringValue"><![CDATA[]]></property>
+            <property name="showDSProcess"><![CDATA[false]]></property>
+            <property name="showCurrentProcess"><![CDATA[true]]></property>
+            <reference name="workstepName" value="workstep.workstepName"/>
+            <reference name="target-process" value="target"/>
+        </macro>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="dsc_action" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+    
+    The following actions may be taken when schedule events gets fired:
+    <ul>
+    <li> Send an email:
+         In  the dialog which comes up for this action, user can specify To, From, Subject
+         and body of the email.
+    </li>
+    <li> Install Application (Create-pt & Install-pt):
+         Application name entered in the text field will be installed.
+    </li>
+    <li> Create Process Instance:
+         User can create instance of the current process or can pick up
+         process name from dataslot.
+    </li>
+      <li>DBAdapter:
+          It is Managed Adapter. User can use this to execute database querries.
+      </li>
+    </ul>
+          
+    ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DynamicDescriptionMacro"
+        label="Summary" name="summary" type="dynamic-description">
+        <property name="description"><![CDATA[The $program program monitors $target.processTemplateName.
+      <br>  ${timeout_date.getHtmlLabel()} following deferred actions will be executed:
+<ul>
+#foreach($single_action in ${action.getComponents()})
+<li>${single_action.getHtmlLabel()}</li>
+#if($single_action.type == "dbmanagedadapter-action")
+<b>Instructions:</b>
+After the rules are generated make certain minimal changes in the rule,
+a. specify valid values to input variables.
+b. Make use of the output values received from the adapter after execution as per the requirement.
+   Output variables values will be put in rule variables.
+<br>
+After performing step a & b,
+compile the rules using command,
+/sbm/bin > RuleCompiler -a AppName -blapi_lib -all
+and load the application through BPMPortal.
+#end
+#end
+</ul>
+#if(${timeout_date.getBusinessTime()} == true)
+    <br>Please set system calendar before deploying this application.
+#end
+ ]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="sendmail-help" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+  <html><body>
+    User can specify To, From, Subject and body of the email.
+  </body> </html>
+    ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="alerts-help" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+  <html><body>
+    Choose a Alert to be publish. 
+  </body> </html>
+    ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="createpi-help" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+  <html><body>
+    <li> Create Process Instance:
+         You can create instance of the current process or can pick up
+         process name from dataslot.
+    </li>
+  </body> </html>
+    ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="installpt-help" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+  <html><body>
+    <li> Install Process Template:
+      Application name entered in the text field will be installed.   
+    </li>
+  </body> </html>
+    ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="dsc_resch" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+  <html><body>
+  1) Reschedule time can be specified.
+     Time can  be specified as Business Time.
+     <br>If Duration is selected and <b>Business time</b> is checked then user needs to ensure that there is system calendar set
+     before deploying this application.
+  <br>
+  2) Here reschedule exit condition can be specified.
+  You can select the constraint to be,
+    * Indefinite - Schedular will keep rescheduling the event indefintely.
+    * Date - Rule will be active till the specified date and schedular will keep rescheduling the event.
+    * Count - Schedular will reschedule the event for the specified no of times.
+  </body> </html>
+    ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="dsc_summary" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+  <html><body>
+  Explanation of the rules generated by <b>Schedule/Defer Action</b> rule template.
+  </body> </html>
+    ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DateExpression"
+        label="When timeout should occur" name="timeout_date" type="date-expression">
+        <property name="minute"><![CDATA[27]]></property>
+        <property name="second"><![CDATA[22]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="timeOutExpressedAs"><![CDATA[Duration]]></property>
+        <property name="month"><![CDATA[1]]></property>
+        <property name="businessTime"><![CDATA[false]]></property>
+        <property name="year"><![CDATA[2015]]></property>
+        <property name="hour"><![CDATA[14]]></property>
+        <property name="day"><![CDATA[19]]></property>
+        <vector-property name="durationArray">
+            <vector-elem><![CDATA[2]]></vector-elem>
+            <vector-elem><![CDATA[0]]></vector-elem>
+            <vector-elem><![CDATA[0]]></vector-elem>
+            <vector-elem><![CDATA[0]]></vector-elem>
+        </vector-property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DateExpression"
+        label="Reschedule Period" name="reschedule_date" type="date-expression">
+        <property name="minute"><![CDATA[27]]></property>
+        <property name="second"><![CDATA[22]]></property>
+        <property name="verify"><![CDATA[false]]></property>
+        <property name="timeOutExpressedAs"><![CDATA[Duration]]></property>
+        <property name="month"><![CDATA[1]]></property>
+        <property name="businessTime"><![CDATA[false]]></property>
+        <property name="year"><![CDATA[2015]]></property>
+        <property name="hour"><![CDATA[14]]></property>
+        <property name="day"><![CDATA[19]]></property>
+        <vector-property name="durationArray">
+            <vector-elem><![CDATA[1]]></vector-elem>
+            <vector-elem><![CDATA[0]]></vector-elem>
+            <vector-elem><![CDATA[0]]></vector-elem>
+            <vector-elem><![CDATA[0]]></vector-elem>
+        </vector-property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.SaveRuleMacro"
+        label="Save rule file as" name="module" type="module">
+        <property name="stringValue"><![CDATA[C:/Users/sinavolu.PROGRESS/Progress/Developer Studio 4.3.1/workspace/test_bpm/test_bpm/rules/SC_Scheduled_Rule.bps]]></property>
+        <reference name="program" value="program"/>
+        <reference name="rtuFileName" value="Schedule.rtu"/>
+        <reference name="processTemplateFilename" value="target.processTemplateFilename"/>
+        <argument processIndex="0"/>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.DescriptionMacro"
+        name="dsc_module" type="help-description">
+        <property name="skipStatus"><![CDATA[NO_SKIP]]></property>
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[
+  Choose the file (with "bps" extension) where the rules will be saved
+        ]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+</parameters>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE rulewizards SYSTEM "rwconf.dtd"> 
+<rulewizards> 
+<rulewizard name="Schedule" file="Schedule.rtu" category="General"> 
+<rule instanceName="Scheduled Rule" workstepName="" dateTime="Thu Feb 19 14:28:39 IST 2015" > 
+<module type = "rule">SC_Scheduled_Rule.bps</module>
+<module type = "data">SC_Scheduled_Rule_data.bps</module>
+</rule> 
+</rulewizard> 
+</rulewizards> 

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process name="test_bpm" type="BIZLOGIC" webbpaID="1424326674643">
+  <Package xmlns="http://www.wfmc.org/2004/XPDL2.0alpha" Id="1" Name="">
+    <PackageHeader>
+      <XPDLVersion>2.0</XPDLVersion>
+      <Vendor>Progress Software Corporation</Vendor>
+      <Created>1424326674823</Created>
+    </PackageHeader>
+    <Pools>
+      <Pool BoundaryVisible="true" Id="test_bpm" Process="test_bpm">
+        <Lanes/>
+      </Pool>
+    </Pools>
+  </Package>
+  <Description/>
+  <Application name="test_bpm"/>
+  <Category level="0"/>
+  <Category level="1"/>
+  <Group/>
+  <Manager>@CREATOR</Manager>
+  <EstimatedDuration>1d</EstimatedDuration>
+  <TimeCreated>1424326674823</TimeCreated>
+  <Author>sinavolu</Author>
+  <Version/>
+  <Attributes>
+    <Attribute name="ProcessType" required="true">
+      <Label>Process Type</Label>
+      <Description>Type of the process</Description>
+      <Value>BusinessProcess</Value>
+    </Attribute>
+  </Attributes>
+  <Resources runtime="false"/>
+  <Simulation count="10" distribution="ct" interval="600" scenario="(default)" stddev="0"/>
+  <Alerts>
+    <Alert name="Default">
+      <AlertSeverity>High</AlertSeverity>
+      <AlertMessage>This is the default alert.</AlertMessage>
+      <AlertDescription/>
+      <AlertCondition type="java:expression"/>
+      <AlertDelivery type="sbm">
+        <AlertRecipient type="USER">${@CREATOR}</AlertRecipient>
+      </AlertDelivery>
+    </Alert>
+  </Alerts>
+  <AtomicWS height="36" id="" name="Start" webbpaID="1424326674644" width="36" worktime="false" x="60" y="204">
+    <AtomicType>START</AtomicType>
+    <PerformingApp>
+      <Metadata name="TARGETTYPE">JSP</Metadata>
+      <Metadata name="TARGET">Start.jsp</Metadata>
+    </PerformingApp>
+    <Form empty="true" name="Start.jsp" type="form/mime64"/>
+    <Priority>MEDIUM</Priority>
+    <RollbackPoint>FALSE</RollbackPoint>
+    <Simulation distribution="ct" scenario="(default)"/>
+  </AtomicWS>
+  <AtomicWS height="60" id="" name="Activity 1" webbpaID="1424326674645" width="108" worktime="false" x="144" y="192">
+    <Label>Activity Great!</Label>
+    <AtomicType>ACTIVITY</AtomicType>
+    <Performer>@CREATOR</Performer>
+    <PerformingApp>
+      <Metadata name="TARGETTYPE">JSP</Metadata>
+      <Metadata name="TARGET">Activity1.jsp</Metadata>
+    </PerformingApp>
+    <Collaboration>
+      <CollabFunction enabled="true" type="Reassign"/>
+    </Collaboration>
+    <Form name="Activity1.jsp" type="JSP">
+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8&#13;
+IURPQ1RZUEUgRm9ybSBTWVNURU0gImZvcm0uZHRkIj4NCjxGb3JtIHRzdGFtcD0iMTQyNDMzNDk0&#13;
+ODg5OSIgdmVyc2lvbj0iOS4wIj4NCiAgPERhdGFTb3VyY2VzPg0KICAgIDxEYXRhU291cmNlIG5h&#13;
+bWU9InN5c3RlbSIgdHlwZT0iZGF0YXNsb3RzIj4NCiAgICAgIDxEYXRhRmllbGQgbmFtZT0iQ1JF&#13;
+QVRPUiIgdHlwZT0iQUJMX0NIQVJBQ1RFUiIvPg0KICAgICAgPERhdGFGaWVsZCBuYW1lPSJQUk9D&#13;
+RVNTTkFNRSIgdHlwZT0iQUJMX0NIQVJBQ1RFUiIvPg0KICAgIDwvRGF0YVNvdXJjZT4NCiAgPC9E&#13;
+YXRhU291cmNlcz4NCiAgPFZhbGlkYXRpb24vPg0KICA8aGVhZD4NCiAgICA8bGluayByZWw9InN0&#13;
+eWxlc2hlZXQiIHR5cGU9ImJpenNvbG8iLz4NCiAgPC9oZWFkPg0KICA8Ym9keT4NCiAgICA8c2Vj&#13;
+dGlvbiBlZGl0YWJsZT0idHJ1ZSIgaGVpZ2h0PSIwIiB0eXBlPSJoZWFkZXIiIHZpc2libGU9InRy&#13;
+dWUiPg0KICAgICAgPGZpZWxkcz4NCiAgICAgICAgPGZpZWxkIG5hbWU9Imluc3RydWN0aW9ucyI+&#13;
+dHJ1ZTwvZmllbGQ+DQogICAgICAgIDxmaWVsZCBuYW1lPSJkdWVEYXRlIj50cnVlPC9maWVsZD4N&#13;
+CiAgICAgICAgPGZpZWxkIG5hbWU9InByaW9yaXR5Ij50cnVlPC9maWVsZD4NCiAgICAgICAgPGZp&#13;
+ZWxkIG5hbWU9InN0YXJ0RGF0ZSI+dHJ1ZTwvZmllbGQ+DQogICAgICA8L2ZpZWxkcz4NCiAgICA8&#13;
+L3NlY3Rpb24+DQogICAgPGJyIGNsZWFyPSJhbGwiLz4NCjxiciBjbGVhcj0iYWxsIi8+DQo8YnIg&#13;
+Y2xlYXI9ImFsbCIvPg0KPGxhYmVsIGNsYXNzPSJBcFNlZ0RhdGFzbG90TGFiZWwiPkNyZWF0b3I8&#13;
+L2xhYmVsPg0KICAgIDxjb250cm9sIGFyZ3M9InsndHlwZSc6J3RleHQnLCAnc2l6ZSc6MzIsICdt&#13;
+YXhsZW5ndGgnOjI1NiwgJ3JlYWRvbmx5Jzp0cnVlLCAndmlzaWJsZSc6dHJ1ZSwgJ2Rpc2FibGVk&#13;
+JzpmYWxzZSwgJ3ZhbGlkYXRpb25UeXBlJzonbm9uZScsICd2YWxpZGF0aW9uJzp7fSwgJ3Rvb2xU&#13;
+aXAnOidPcGVuRWRnZSB0ZXh0IGZpZWxkIHdpZGdldC4nLCAndGFiT3JkZXInOicwJ30iIGRhdGVP&#13;
+bmx5PSJmYWxzZSIgZWRpdGFibGU9ImZhbHNlIiBoZWlnaHQ9IjI0IiBpZD0idGV4dEZpZWxkMSIg&#13;
+aW1hZ2U9ImZvcm1zL3dpZGdldHMvc2JtL3RleHRmaWVsZC9pbWFnZXMvdGV4dGZpZWxkLnBuZyIg&#13;
+bmFtZT0iQ1JFQVRPUiIgcGFzc3dvcmQ9ImZhbHNlIiByZXF1aXJlZD0iZmFsc2UiIHNvdXJjZT0i&#13;
+c3lzdGVtIiB0YWJpbmRleD0iMCIgdHlwZT0ic2JtLnRleHRmaWVsZCIgdmVyc2lvbj0iMSIgdmlz&#13;
+aWJsZT0idHJ1ZSIgd2lkZ2V0U291cmNlPSJ7dHlwZTonREFUQVNMT1QnLCBkYXRhU2xvdE5hbWU6&#13;
+J0NSRUFUT1InLCBkYXRhU2xvdFR5cGU6J0FCTF9DSEFSQUNURVInfSIgd2lkZ2V0VGFyZ2V0PSJ7&#13;
+dHlwZTonREFUQVNMT1QnLCBkYXRhU2xvdE5hbWU6JycsIGRhdGFTbG90VHlwZTonJ30iIHdpZGdl&#13;
+dFR5cGU9ImFkdmFuY2VkIiB3aWR0aD0iMjg4Ij4NCiAgICAgIDx3aWRnZXRqc29uPnsiYWRhcGxl&#13;
+dERhdGFTb3VyY2UiOnsic2VsZWN0ZWQiOmZhbHNlfSwiYmluZGluZ0NvbnRyb2xsZXIiOnsidGFy&#13;
+Z2V0IjoiIiwiZGF0YVR5cGVzQXJyYXkiOlsiSW50ZWdlciIsIkxvbmciLCJEb3VibGUiLCJEZWNp&#13;
+bWFsIiwiTnVtYmVyIiwiU3RyaW5nIiwiVVJMIiwiQUJMX0NIQVJBQ1RFUiIsIkFCTF9MT05HQ0hB&#13;
+UiIsIkFCTF9JTlRFR0VSIiwiQUJMX0lOVDY0IiwiQUJMX0RFQ0lNQUwiXSwiZW5hYmxlVGFyZ2V0&#13;
+QmluZGluZyI6dHJ1ZSwidGFyZ2V0RGF0YVR5cGVBcnJheSI6WyJJbnRlZ2VyIiwiTG9uZyIsIkRv&#13;
+dWJsZSIsIkRlY2ltYWwiLCJOdW1iZXIiLCJTdHJpbmciLCJVUkwiLCJBQkxfQ0hBUkFDVEVSIiwi&#13;
+QUJMX0xPTkdDSEFSIiwiQUJMX0lOVEVHRVIiLCJBQkxfSU5UNjQiLCJBQkxfREVDSU1BTCJdLCJ0&#13;
+VHlwZSI6IiIsImVuYWJsZURhdGFTbG90QmluZGluZyI6dHJ1ZSwiZW5hYmxlU2VydmljZUJpbmRp&#13;
+bmciOnRydWV9LCJ0b3BpY0luZm8iOnsidHlwZSI6InB1Ymxpc2giLCJ0b3BpY05hbWUiOlsiL3Ni&#13;
+bS90ZXh0ZmllbGQvb25DaGFuZ2UiLCIvc2JtL3RleHRmaWVsZC9vbkNsaWNrIiwiL3NibS90ZXh0&#13;
+ZmllbGQvb25Gb2N1cyIsIi9zYm0vdGV4dGZpZWxkL29uQmx1ciIsIi9zYm0vdGV4dGZpZWxkL29u&#13;
+S2V5UHJlc3MiLCIvc2JtL3RleHRmaWVsZC9vbktleVVwIiwiL3NibS90ZXh0ZmllbGQvb25Nb3Vz&#13;
+ZURvd24iXX0sInNlcnZpY2VVUkwiOnsic2VsZWN0ZWQiOmZhbHNlfSwibmFtZUZvbGRlciI6InRl&#13;
+eHRmaWVsZCIsInZhbGlkYXRpb24iOlt7InNlbGVjdGVkIjp0cnVlLCJsYWJlbCI6Ik5vbmUiLCJ0&#13;
+eXBlIjoibm9uZSIsIm9wdGlvbnMiOltdfSx7InNlbGVjdGVkIjpmYWxzZSwibGFiZWwiOiJJbnRl&#13;
+Z2VyIiwidHlwZSI6ImludGVnZXIiLCJvcHRpb25zIjpbInZhbGlkYXRlT24iLCJpc1JlcXVpcmVk&#13;
+IiwidXNlQ2hhcmFjdGVyTWFza2luZyIsIm1pblZhbHVlIiwibWF4VmFsdWUiLCJ0ZXh0ZmllbGRS&#13;
+ZXF1aXJlZE1zZyJdfSx7InNlbGVjdGVkIjpmYWxzZSwibGFiZWwiOiJFbWFpbCIsInR5cGUiOiJl&#13;
+bWFpbCIsIm9wdGlvbnMiOlsidmFsaWRhdGVPbiIsImlzUmVxdWlyZWQiLCJtaW5DaGFycyIsIm1h&#13;
+eENoYXJzIiwidGV4dGZpZWxkUmVxdWlyZWRNc2ciXX0seyJzZWxlY3RlZCI6ZmFsc2UsImxhYmVs&#13;
+IjoiRGF0ZSIsInR5cGUiOiJkYXRlIiwib3B0aW9ucyI6WyJmb3JtYXREYXRlIiwidmFsaWRhdGVP&#13;
+biIsImlzUmVxdWlyZWQiLCJ1c2VDaGFyYWN0ZXJNYXNraW5nIiwibWluVmFsdWUiLCJtYXhWYWx1&#13;
+ZSIsInRleHRmaWVsZFJlcXVpcmVkTXNnIl19LHsic2VsZWN0ZWQiOmZhbHNlLCJsYWJlbCI6IlRp&#13;
+bWUiLCJ0eXBlIjoidGltZSIsIm9wdGlvbnMiOlsiZm9ybWF0VGltZSIsInZhbGlkYXRlT24iLCJp&#13;
+c1JlcXVpcmVkIiwidXNlQ2hhcmFjdGVyTWFza2luZyIsIm1pblZhbHVlIiwibWF4VmFsdWUiLCJ0&#13;
+ZXh0ZmllbGRSZXF1aXJlZE1zZyJdfSx7InNlbGVjdGVkIjpmYWxzZSwibGFiZWwiOiJDcmVkaXQg&#13;
+Q2FyZCIsInR5cGUiOiJjcmVkaXRfY2FyZCIsIm9wdGlvbnMiOlsiZm9ybWF0Q3JlZGl0Q2FyZCIs&#13;
+InZhbGlkYXRlT24iLCJpc1JlcXVpcmVkIiwidXNlQ2hhcmFjdGVyTWFza2luZyIsInRleHRmaWVs&#13;
+ZFJlcXVpcmVkTXNnIl19LHsic2VsZWN0ZWQiOmZhbHNlLCJsYWJlbCI6IlppcCBDb2RlIiwidHlw&#13;
+ZSI6InppcF9jb2RlIiwib3B0aW9ucyI6WyJmb3JtYXRaaXBDb2RlIiwidmFsaWRhdGVPbiIsImlz&#13;
+UmVxdWlyZWQiLCJ1c2VDaGFyYWN0ZXJNYXNraW5nIiwicGF0dGVybiIsInRleHRmaWVsZFJlcXVp&#13;
+cmVkTXNnIl19LHsic2VsZWN0ZWQiOmZhbHNlLCJsYWJlbCI6IlNvY2lhbCBTZWN1cml0eSBOdW1i&#13;
+ZXIiLCJ0eXBlIjoic29jaWFsX3NlY3VyaXR5X251bWJlciIsIm9wdGlvbnMiOlsidmFsaWRhdGVP&#13;
+biIsImlzUmVxdWlyZWQiLCJ1c2VDaGFyYWN0ZXJNYXNraW5nIiwicGF0dGVybiIsInRleHRmaWVs&#13;
+ZFJlcXVpcmVkTXNnIl19LHsic2VsZWN0ZWQiOmZhbHNlLCJsYWJlbCI6IkN1cnJlbmN5IiwidHlw&#13;
+ZSI6ImN1cnJlbmN5Iiwib3B0aW9ucyI6WyJmb3JtYXRDdXJyZW5jeSIsInZhbGlkYXRlT24iLCJp&#13;
+c1JlcXVpcmVkIiwidXNlQ2hhcmFjdGVyTWFza2luZyIsIm1pblZhbHVlIiwibWF4VmFsdWUiLCJ0&#13;
+ZXh0ZmllbGRSZXF1aXJlZE1zZyJdfSx7InNlbGVjdGVkIjpmYWxzZSwibGFiZWwiOiJSZWFsIiwi&#13;
+dHlwZSI6InJlYWwiLCJvcHRpb25zIjpbInZhbGlkYXRlT24iLCJpc1JlcXVpcmVkIiwidXNlQ2hh&#13;
+cmFjdGVyTWFza2luZyIsIm1pblZhbHVlIiwibWF4VmFsdWUiLCJ0ZXh0ZmllbGRSZXF1aXJlZE1z&#13;
+ZyJdfSx7InNlbGVjdGVkIjpmYWxzZSwibGFiZWwiOiJJUCIsInR5cGUiOiJpcCIsIm9wdGlvbnMi&#13;
+OlsiZm9ybWF0SVAiLCJ2YWxpZGF0ZU9uIiwiaXNSZXF1aXJlZCIsInVzZUNoYXJhY3Rlck1hc2tp&#13;
+bmciLCJ0ZXh0ZmllbGRSZXF1aXJlZE1zZyJdfSx7InNlbGVjdGVkIjpmYWxzZSwibGFiZWwiOiJV&#13;
+UkwiLCJ0eXBlIjoidXJsIiwib3B0aW9ucyI6WyJ2YWxpZGF0ZU9uIiwiaXNSZXF1aXJlZCIsIm1p&#13;
+bkNoYXJzIiwibWF4Q2hhcnMiLCJ0ZXh0ZmllbGRSZXF1aXJlZE1zZyJdfSx7InNlbGVjdGVkIjpm&#13;
+YWxzZSwibGFiZWwiOiJQaG9uZSBOdW1iZXIiLCJ0eXBlIjoicGhvbmVfbnVtYmVyIiwib3B0aW9u&#13;
+cyI6WyJmb3JtYXRQaG9uZSIsInZhbGlkYXRlT24iLCJ1c2VDaGFyYWN0ZXJNYXNraW5nIiwiaXNS&#13;
+ZXF1aXJlZCIsInRleHRmaWVsZFJlcXVpcmVkTXNnIiwicGF0dGVybiJdfSx7InNlbGVjdGVkIjpm&#13;
+YWxzZSwibGFiZWwiOiJDdXN0b20iLCJ0eXBlIjoiY3VzdG9tIiwib3B0aW9ucyI6WyJ2YWxpZGF0&#13;
+ZU9uIiwicGF0dGVybiIsImlzUmVxdWlyZWQiLCJ0ZXh0ZmllbGRSZXF1aXJlZE1zZyIsImN1c3Rv&#13;
+bVJlZ3VsYXJFeHByZXNzaW9uIl19XSwiYXJncyI6W3sidHlwZSI6eyJ2YWx1ZXMiOlt7Im5hbWUi&#13;
+OiJ0ZXh0IiwidmFsdWUiOiJUZXh0In0seyJuYW1lIjoicGFzc3dvcmQiLCJ2YWx1ZSI6IlBhc3N3&#13;
+b3JkIn1dLCJsYWJlbCI6IlR5cGUiLCJ0eXBlIjoiU1RSSU5HIiwiZGVmYXVsdFZhbHVlIjoidGV4&#13;
+dCJ9fSx7InNpemUiOnsiZGVzY3JpcHRpb24iOiJOdW1iZXIgb2YgdmlzaWJsZSBjaGFyYWN0ZXJz&#13;
+IGluIHRoZSB0ZXh0ZmllbGQiLCJsYWJlbCI6IlNpemUiLCJ0eXBlIjoiSU5URUdFUiIsImRlZmF1&#13;
+bHRWYWx1ZSI6IjMyIn19LHsibWF4bGVuZ3RoIjp7ImRlc2NyaXB0aW9uIjoiTWF4aW11bSBudW1i&#13;
+ZXIgb2YgY2hhcmFjdGVycyBhbGxvd2VkLiIsImxhYmVsIjoiTWF4IExlbmd0aCIsInR5cGUiOiJJ&#13;
+TlRFR0VSIiwiZGVmYXVsdFZhbHVlIjoiMjU2In19LHsicmVhZG9ubHkiOnsidmFsdWVzIjpbeyJu&#13;
+YW1lIjoidHJ1ZSIsInZhbHVlIjoidHJ1ZSJ9LHsibmFtZSI6ImZhbHNlIiwidmFsdWUiOiJmYWxz&#13;
+ZSJ9XSwibGFiZWwiOiJSZWFkIE9ubHkiLCJ0eXBlIjoiQk9PTEVBTiIsImRlZmF1bHRWYWx1ZSI6&#13;
+InRydWUifX0seyJ2aXNpYmxlIjp7ImxhYmVsIjoiJUZvcm0uY2hlY2tib3gudmlzaWJsZSIsInR5&#13;
+cGUiOiJCT09MRUFOIiwiZGVmYXVsdFZhbHVlIjoidHJ1ZSJ9fSx7ImRpc2FibGVkIjp7InZhbHVl&#13;
+cyI6W3sibmFtZSI6InRydWUiLCJ2YWx1ZSI6InRydWUifSx7Im5hbWUiOiJmYWxzZSIsInZhbHVl&#13;
+IjoiZmFsc2UifV0sImxhYmVsIjoiRGlzYWJsZWQiLCJ0eXBlIjoiQk9PTEVBTiIsImRlZmF1bHRW&#13;
+YWx1ZSI6ImZhbHNlIn19XSwidHlwZUZvbGRlciI6InNibSIsImltYWdlIjoiaW1hZ2VzL3RleHRm&#13;
+aWVsZC5wbmciLCJsYWJlbCI6IiV3aWRnZXQudGV4dGZpZWxkLmxhYmVsIiwidHlwZSI6InNibSIs&#13;
+ImRhdGFzbG90Ijp7InNlbGVjdGVkIjp0cnVlLCJkZWZhdWx0VmFsdWUiOiJDUkVBVE9SIn0sIndp&#13;
+ZGdldFJlbmRlcmVyIjoiY29tLnNhdnZpb24udG9vbHMuZm9ybS5kYXRhLndpZGdldC5yZW5kZXJl&#13;
+cnMuVGV4dEZpZWxkUmVuZGVyZXIiLCJpc011bHRpU2VsZWN0IjpmYWxzZSwidmVyc2lvbiI6IjEu&#13;
+MCIsImNhdGVnb3J5IjoiVGV4dCBGaWVsZCIsImlzVmlzaWJsZSI6dHJ1ZSwiZGVzY3JpcHRpb24i&#13;
+OiJPcGVuRWRnZSB0ZXh0IGZpZWxkIHdpZGdldC4iLCJuYW1lIjoiVGV4dEZpZWxkIiwidmFsdWUi&#13;
+Onsic2VsZWN0ZWQiOmZhbHNlLCJyZXF1aXJlZCI6ImZhbHNlIiwidHlwZSI6IlNUUklORyIsImRl&#13;
+ZmF1bHRWYWx1ZSI6IiJ9LCJqbWFraVZlcnNpb24iOiIxLjAiLCJlbmFibGVXaWRnZXRCaW5kaW5n&#13;
+Ijp0cnVlLCJwcmV2aWV3RGF0YSI6e319PC93aWRnZXRqc29uPg0KICAgIDwvY29udHJvbD4NCiAg&#13;
+ICA8YnIgY2xlYXI9ImFsbCIvPg0KPGJyIGNsZWFyPSJhbGwiLz4NCjxsYWJlbCBjbGFzcz0iQXBT&#13;
+ZWdEYXRhc2xvdExhYmVsIj5Qcm9jZXNzTmFtZTwvbGFiZWw+DQogICAgPGNvbnRyb2wgYXJncz0i&#13;
+eyd0eXBlJzondGV4dCcsICdzaXplJzozMiwgJ21heGxlbmd0aCc6MjU2LCAncmVhZG9ubHknOnRy&#13;
+dWUsICd2aXNpYmxlJzp0cnVlLCAnZGlzYWJsZWQnOmZhbHNlLCAndmFsaWRhdGlvblR5cGUnOidu&#13;
+b25lJywgJ3ZhbGlkYXRpb24nOnt9LCAndG9vbFRpcCc6J09wZW5FZGdlIHRleHQgZmllbGQgd2lk&#13;
+Z2V0LicsICd0YWJPcmRlcic6JzAnfSIgZGF0ZU9ubHk9ImZhbHNlIiBlZGl0YWJsZT0iZmFsc2Ui&#13;
+IGhlaWdodD0iMjQiIGlkPSJ0ZXh0RmllbGQyIiBpbWFnZT0iZm9ybXMvd2lkZ2V0cy9zYm0vdGV4&#13;
+dGZpZWxkL2ltYWdlcy90ZXh0ZmllbGQucG5nIiBuYW1lPSJQUk9DRVNTTkFNRSIgcGFzc3dvcmQ9&#13;
+ImZhbHNlIiByZXF1aXJlZD0iZmFsc2UiIHNvdXJjZT0ic3lzdGVtIiB0YWJpbmRleD0iMCIgdHlw&#13;
+ZT0ic2JtLnRleHRmaWVsZCIgdmVyc2lvbj0iMSIgdmlzaWJsZT0idHJ1ZSIgd2lkZ2V0U291cmNl&#13;
+PSJ7dHlwZTonREFUQVNMT1QnLCBkYXRhU2xvdE5hbWU6J1BST0NFU1NOQU1FJywgZGF0YVNsb3RU&#13;
+eXBlOidBQkxfQ0hBUkFDVEVSJ30iIHdpZGdldFRhcmdldD0ie3R5cGU6J0RBVEFTTE9UJywgZGF0&#13;
+YVNsb3ROYW1lOicnLCBkYXRhU2xvdFR5cGU6Jyd9IiB3aWRnZXRUeXBlPSJhZHZhbmNlZCIgd2lk&#13;
+dGg9IjI4OCI+DQogICAgICA8d2lkZ2V0anNvbj57ImFkYXBsZXREYXRhU291cmNlIjp7InNlbGVj&#13;
+dGVkIjpmYWxzZX0sImJpbmRpbmdDb250cm9sbGVyIjp7InRhcmdldCI6IiIsImRhdGFUeXBlc0Fy&#13;
+cmF5IjpbIkludGVnZXIiLCJMb25nIiwiRG91YmxlIiwiRGVjaW1hbCIsIk51bWJlciIsIlN0cmlu&#13;
+ZyIsIlVSTCIsIkFCTF9DSEFSQUNURVIiLCJBQkxfTE9OR0NIQVIiLCJBQkxfSU5URUdFUiIsIkFC&#13;
+TF9JTlQ2NCIsIkFCTF9ERUNJTUFMIl0sImVuYWJsZVRhcmdldEJpbmRpbmciOnRydWUsInRhcmdl&#13;
+dERhdGFUeXBlQXJyYXkiOlsiSW50ZWdlciIsIkxvbmciLCJEb3VibGUiLCJEZWNpbWFsIiwiTnVt&#13;
+YmVyIiwiU3RyaW5nIiwiVVJMIiwiQUJMX0NIQVJBQ1RFUiIsIkFCTF9MT05HQ0hBUiIsIkFCTF9J&#13;
+TlRFR0VSIiwiQUJMX0lOVDY0IiwiQUJMX0RFQ0lNQUwiXSwidFR5cGUiOiIiLCJlbmFibGVEYXRh&#13;
+U2xvdEJpbmRpbmciOnRydWUsImVuYWJsZVNlcnZpY2VCaW5kaW5nIjp0cnVlfSwidG9waWNJbmZv&#13;
+Ijp7InR5cGUiOiJwdWJsaXNoIiwidG9waWNOYW1lIjpbIi9zYm0vdGV4dGZpZWxkL29uQ2hhbmdl&#13;
+IiwiL3NibS90ZXh0ZmllbGQvb25DbGljayIsIi9zYm0vdGV4dGZpZWxkL29uRm9jdXMiLCIvc2Jt&#13;
+L3RleHRmaWVsZC9vbkJsdXIiLCIvc2JtL3RleHRmaWVsZC9vbktleVByZXNzIiwiL3NibS90ZXh0&#13;
+ZmllbGQvb25LZXlVcCIsIi9zYm0vdGV4dGZpZWxkL29uTW91c2VEb3duIl19LCJzZXJ2aWNlVVJM&#13;
+Ijp7InNlbGVjdGVkIjpmYWxzZX0sIm5hbWVGb2xkZXIiOiJ0ZXh0ZmllbGQiLCJ2YWxpZGF0aW9u&#13;
+IjpbeyJzZWxlY3RlZCI6dHJ1ZSwibGFiZWwiOiJOb25lIiwidHlwZSI6Im5vbmUiLCJvcHRpb25z&#13;
+IjpbXX0seyJzZWxlY3RlZCI6ZmFsc2UsImxhYmVsIjoiSW50ZWdlciIsInR5cGUiOiJpbnRlZ2Vy&#13;
+Iiwib3B0aW9ucyI6WyJ2YWxpZGF0ZU9uIiwiaXNSZXF1aXJlZCIsInVzZUNoYXJhY3Rlck1hc2tp&#13;
+bmciLCJtaW5WYWx1ZSIsIm1heFZhbHVlIiwidGV4dGZpZWxkUmVxdWlyZWRNc2ciXX0seyJzZWxl&#13;
+Y3RlZCI6ZmFsc2UsImxhYmVsIjoiRW1haWwiLCJ0eXBlIjoiZW1haWwiLCJvcHRpb25zIjpbInZh&#13;
+bGlkYXRlT24iLCJpc1JlcXVpcmVkIiwibWluQ2hhcnMiLCJtYXhDaGFycyIsInRleHRmaWVsZFJl&#13;
+cXVpcmVkTXNnIl19LHsic2VsZWN0ZWQiOmZhbHNlLCJsYWJlbCI6IkRhdGUiLCJ0eXBlIjoiZGF0&#13;
+ZSIsIm9wdGlvbnMiOlsiZm9ybWF0RGF0ZSIsInZhbGlkYXRlT24iLCJpc1JlcXVpcmVkIiwidXNl&#13;
+Q2hhcmFjdGVyTWFza2luZyIsIm1pblZhbHVlIiwibWF4VmFsdWUiLCJ0ZXh0ZmllbGRSZXF1aXJl&#13;
+ZE1zZyJdfSx7InNlbGVjdGVkIjpmYWxzZSwibGFiZWwiOiJUaW1lIiwidHlwZSI6InRpbWUiLCJv&#13;
+cHRpb25zIjpbImZvcm1hdFRpbWUiLCJ2YWxpZGF0ZU9uIiwiaXNSZXF1aXJlZCIsInVzZUNoYXJh&#13;
+Y3Rlck1hc2tpbmciLCJtaW5WYWx1ZSIsIm1heFZhbHVlIiwidGV4dGZpZWxkUmVxdWlyZWRNc2ci&#13;
+XX0seyJzZWxlY3RlZCI6ZmFsc2UsImxhYmVsIjoiQ3JlZGl0IENhcmQiLCJ0eXBlIjoiY3JlZGl0&#13;
+X2NhcmQiLCJvcHRpb25zIjpbImZvcm1hdENyZWRpdENhcmQiLCJ2YWxpZGF0ZU9uIiwiaXNSZXF1&#13;
+aXJlZCIsInVzZUNoYXJhY3Rlck1hc2tpbmciLCJ0ZXh0ZmllbGRSZXF1aXJlZE1zZyJdfSx7InNl&#13;
+bGVjdGVkIjpmYWxzZSwibGFiZWwiOiJaaXAgQ29kZSIsInR5cGUiOiJ6aXBfY29kZSIsIm9wdGlv&#13;
+bnMiOlsiZm9ybWF0WmlwQ29kZSIsInZhbGlkYXRlT24iLCJpc1JlcXVpcmVkIiwidXNlQ2hhcmFj&#13;
+dGVyTWFza2luZyIsInBhdHRlcm4iLCJ0ZXh0ZmllbGRSZXF1aXJlZE1zZyJdfSx7InNlbGVjdGVk&#13;
+IjpmYWxzZSwibGFiZWwiOiJTb2NpYWwgU2VjdXJpdHkgTnVtYmVyIiwidHlwZSI6InNvY2lhbF9z&#13;
+ZWN1cml0eV9udW1iZXIiLCJvcHRpb25zIjpbInZhbGlkYXRlT24iLCJpc1JlcXVpcmVkIiwidXNl&#13;
+Q2hhcmFjdGVyTWFza2luZyIsInBhdHRlcm4iLCJ0ZXh0ZmllbGRSZXF1aXJlZE1zZyJdfSx7InNl&#13;
+bGVjdGVkIjpmYWxzZSwibGFiZWwiOiJDdXJyZW5jeSIsInR5cGUiOiJjdXJyZW5jeSIsIm9wdGlv&#13;
+bnMiOlsiZm9ybWF0Q3VycmVuY3kiLCJ2YWxpZGF0ZU9uIiwiaXNSZXF1aXJlZCIsInVzZUNoYXJh&#13;
+Y3Rlck1hc2tpbmciLCJtaW5WYWx1ZSIsIm1heFZhbHVlIiwidGV4dGZpZWxkUmVxdWlyZWRNc2ci&#13;
+XX0seyJzZWxlY3RlZCI6ZmFsc2UsImxhYmVsIjoiUmVhbCIsInR5cGUiOiJyZWFsIiwib3B0aW9u&#13;
+cyI6WyJ2YWxpZGF0ZU9uIiwiaXNSZXF1aXJlZCIsInVzZUNoYXJhY3Rlck1hc2tpbmciLCJtaW5W&#13;
+YWx1ZSIsIm1heFZhbHVlIiwidGV4dGZpZWxkUmVxdWlyZWRNc2ciXX0seyJzZWxlY3RlZCI6ZmFs&#13;
+c2UsImxhYmVsIjoiSVAiLCJ0eXBlIjoiaXAiLCJvcHRpb25zIjpbImZvcm1hdElQIiwidmFsaWRh&#13;
+dGVPbiIsImlzUmVxdWlyZWQiLCJ1c2VDaGFyYWN0ZXJNYXNraW5nIiwidGV4dGZpZWxkUmVxdWly&#13;
+ZWRNc2ciXX0seyJzZWxlY3RlZCI6ZmFsc2UsImxhYmVsIjoiVVJMIiwidHlwZSI6InVybCIsIm9w&#13;
+dGlvbnMiOlsidmFsaWRhdGVPbiIsImlzUmVxdWlyZWQiLCJtaW5DaGFycyIsIm1heENoYXJzIiwi&#13;
+dGV4dGZpZWxkUmVxdWlyZWRNc2ciXX0seyJzZWxlY3RlZCI6ZmFsc2UsImxhYmVsIjoiUGhvbmUg&#13;
+TnVtYmVyIiwidHlwZSI6InBob25lX251bWJlciIsIm9wdGlvbnMiOlsiZm9ybWF0UGhvbmUiLCJ2&#13;
+YWxpZGF0ZU9uIiwidXNlQ2hhcmFjdGVyTWFza2luZyIsImlzUmVxdWlyZWQiLCJ0ZXh0ZmllbGRS&#13;
+ZXF1aXJlZE1zZyIsInBhdHRlcm4iXX0seyJzZWxlY3RlZCI6ZmFsc2UsImxhYmVsIjoiQ3VzdG9t&#13;
+IiwidHlwZSI6ImN1c3RvbSIsIm9wdGlvbnMiOlsidmFsaWRhdGVPbiIsInBhdHRlcm4iLCJpc1Jl&#13;
+cXVpcmVkIiwidGV4dGZpZWxkUmVxdWlyZWRNc2ciLCJjdXN0b21SZWd1bGFyRXhwcmVzc2lvbiJd&#13;
+fV0sImFyZ3MiOlt7InR5cGUiOnsidmFsdWVzIjpbeyJuYW1lIjoidGV4dCIsInZhbHVlIjoiVGV4&#13;
+dCJ9LHsibmFtZSI6InBhc3N3b3JkIiwidmFsdWUiOiJQYXNzd29yZCJ9XSwibGFiZWwiOiJUeXBl&#13;
+IiwidHlwZSI6IlNUUklORyIsImRlZmF1bHRWYWx1ZSI6InRleHQifX0seyJzaXplIjp7ImRlc2Ny&#13;
+aXB0aW9uIjoiTnVtYmVyIG9mIHZpc2libGUgY2hhcmFjdGVycyBpbiB0aGUgdGV4dGZpZWxkIiwi&#13;
+bGFiZWwiOiJTaXplIiwidHlwZSI6IklOVEVHRVIiLCJkZWZhdWx0VmFsdWUiOiIzMiJ9fSx7Im1h&#13;
+eGxlbmd0aCI6eyJkZXNjcmlwdGlvbiI6Ik1heGltdW0gbnVtYmVyIG9mIGNoYXJhY3RlcnMgYWxs&#13;
+b3dlZC4iLCJsYWJlbCI6Ik1heCBMZW5ndGgiLCJ0eXBlIjoiSU5URUdFUiIsImRlZmF1bHRWYWx1&#13;
+ZSI6IjI1NiJ9fSx7InJlYWRvbmx5Ijp7InZhbHVlcyI6W3sibmFtZSI6InRydWUiLCJ2YWx1ZSI6&#13;
+InRydWUifSx7Im5hbWUiOiJmYWxzZSIsInZhbHVlIjoiZmFsc2UifV0sImxhYmVsIjoiUmVhZCBP&#13;
+bmx5IiwidHlwZSI6IkJPT0xFQU4iLCJkZWZhdWx0VmFsdWUiOiJ0cnVlIn19LHsidmlzaWJsZSI6&#13;
+eyJsYWJlbCI6IiVGb3JtLmNoZWNrYm94LnZpc2libGUiLCJ0eXBlIjoiQk9PTEVBTiIsImRlZmF1&#13;
+bHRWYWx1ZSI6InRydWUifX0seyJkaXNhYmxlZCI6eyJ2YWx1ZXMiOlt7Im5hbWUiOiJ0cnVlIiwi&#13;
+dmFsdWUiOiJ0cnVlIn0seyJuYW1lIjoiZmFsc2UiLCJ2YWx1ZSI6ImZhbHNlIn1dLCJsYWJlbCI6&#13;
+IkRpc2FibGVkIiwidHlwZSI6IkJPT0xFQU4iLCJkZWZhdWx0VmFsdWUiOiJmYWxzZSJ9fV0sInR5&#13;
+cGVGb2xkZXIiOiJzYm0iLCJpbWFnZSI6ImltYWdlcy90ZXh0ZmllbGQucG5nIiwibGFiZWwiOiIl&#13;
+d2lkZ2V0LnRleHRmaWVsZC5sYWJlbCIsInR5cGUiOiJzYm0iLCJkYXRhc2xvdCI6eyJzZWxlY3Rl&#13;
+ZCI6dHJ1ZSwiZGVmYXVsdFZhbHVlIjoiUFJPQ0VTU05BTUUifSwid2lkZ2V0UmVuZGVyZXIiOiJj&#13;
+b20uc2F2dmlvbi50b29scy5mb3JtLmRhdGEud2lkZ2V0LnJlbmRlcmVycy5UZXh0RmllbGRSZW5k&#13;
+ZXJlciIsImlzTXVsdGlTZWxlY3QiOmZhbHNlLCJ2ZXJzaW9uIjoiMS4wIiwiY2F0ZWdvcnkiOiJU&#13;
+ZXh0IEZpZWxkIiwiaXNWaXNpYmxlIjp0cnVlLCJkZXNjcmlwdGlvbiI6Ik9wZW5FZGdlIHRleHQg&#13;
+ZmllbGQgd2lkZ2V0LiIsIm5hbWUiOiJUZXh0RmllbGQiLCJ2YWx1ZSI6eyJzZWxlY3RlZCI6ZmFs&#13;
+c2UsInJlcXVpcmVkIjoiZmFsc2UiLCJ0eXBlIjoiU1RSSU5HIiwiZGVmYXVsdFZhbHVlIjoiIn0s&#13;
+ImptYWtpVmVyc2lvbiI6IjEuMCIsImVuYWJsZVdpZGdldEJpbmRpbmciOnRydWUsInByZXZpZXdE&#13;
+YXRhIjp7fX08L3dpZGdldGpzb24+DQogICAgPC9jb250cm9sPg0KICAgIDxiciBjbGVhcj0iYWxs&#13;
+Ii8+DQo8YnIgY2xlYXI9ImFsbCIvPg0KPHNlY3Rpb24gZWRpdGFibGU9InRydWUiIGhlaWdodD0i&#13;
+MCIgdHlwZT0iZm9vdGVyIiB2aXNpYmxlPSJ0cnVlIj4NCiAgICAgIDxmaWVsZHM+DQogICAgICAg&#13;
+IDxmaWVsZCBuYW1lPSJyZWFzc2lnbiI+dHJ1ZTwvZmllbGQ+DQogICAgICAgIDxmaWVsZCBuYW1l&#13;
+PSJ3b3JrVGltZSI+ZmFsc2U8L2ZpZWxkPg0KICAgICAgICA8ZmllbGQgbmFtZT0ic2tpcHBhYmxl&#13;
+Ij5mYWxzZTwvZmllbGQ+DQogICAgICA8L2ZpZWxkcz4NCiAgICA8L3NlY3Rpb24+DQogIDwvYm9k&#13;
+eT4NCjwvRm9ybT4NCg==
+</Form>
+    <Duration value="7200">2h</Duration>
+    <Priority>MEDIUM</Priority>
+    <EmailSupport>FALSE</EmailSupport>
+    <Datainput>@PROCESSNAME</Datainput>
+    <Datainput>@CREATOR</Datainput>
+    <Format editable="false" input="PROCESSNAME" label="Process Name" type="label">
+      <Label>Process Name</Label>
+    </Format>
+    <Format editable="false" input="CREATOR" label="Creator" type="label">
+      <Label>Creator</Label>
+    </Format>
+    <RollbackPoint>FALSE</RollbackPoint>
+    <Simulation distribution="ct" scenario="(default)">
+      <Duration value="7200">2h</Duration>
+    </Simulation>
+  </AtomicWS>
+  <AtomicWS height="36" id="" name="End 1" webbpaID="1424326674646" width="36" worktime="false" x="420" y="204">
+    <AtomicType>END</AtomicType>
+    <Priority>MEDIUM</Priority>
+    <RollbackPoint>FALSE</RollbackPoint>
+    <Simulation distribution="ct" scenario="(default)"/>
+  </AtomicWS>
+  <ExternalWS height="60" id="" name="Activity 2" webbpaID="1424326674647" width="108" x="276" y="192">
+    <Performer category="DBAdapters" generate="false" managed="true" name="GenericDBAdapter">com.savvion.sbm.adapters.db.DBAdapter</Performer>
+    <PerformBy>execute</PerformBy>
+    <ClosedConnection>TRUE</ClosedConnection>
+    <Duration value="7200">2h</Duration>
+    <Priority>MEDIUM</Priority>
+    <RollbackPoint>FALSE</RollbackPoint>
+    <Simulation distribution="ct" scenario="(default)">
+      <Duration value="7200">2h</Duration>
+    </Simulation>
+    <InlineExecution>FALSE</InlineExecution>
+    <AdapterType>process</AdapterType>
+    <Configuration>
+      <File name="mapping.prop" type="form/mime64">
+I1RodSBGZWIgMTkgMTE6NDg6NDcgSVNUIDIwMTUNCmFkYXB0ZXItY2xhc3M9Y29tLnNhdnZpb24u&#13;
+c2JtLmFkYXB0ZXJzLmRiLkRCQWRhcHRlcg0KbWFwLWNvbmZpZ3VyYXRvcj1jb20uc2F2dmlvbi5z&#13;
+Ym0uYWRhcHRlcnMuZnJhbWV3b3JrLlRhYmJlZE1hcENvbmZpZ3VyYXRvcg0KYWRhcHRlci1jb25m&#13;
+aWd1cmF0b3I9Y29tLnNhdnZpb24uc2JtLmFkYXB0ZXJzLmRiLkRCQWRhcHRlckNvbmZpZ3VyYXRv&#13;
+cg0KQWRhcHRlck5hbWU9R2VuZXJpY0RCQWRhcHRlcg0KbG9nLWxldmVsPTEwDQpydW50aW1lLW1h&#13;
+cHBlcj1jb20uc2F2dmlvbi5zYm0uYWRhcHRlcnMuZnJhbWV3b3JrLlNpbXBsZU1hcHBlcg0KQWRh&#13;
+cHRlckNhdGVnb3J5PURCQWRhcHRlcnMNCmljb249ZGF0YS5wbmcNCmluc3RhbmNlPXRydWUNCmlu&#13;
+bGluZS1lbmFibGVkPXRydWUNCmFkYXBsZXQ9dHJ1ZQ0K
+</File>
+      <File name="config.xml" type="form/mime64">
+PGNvbmZpZ2Zvcm0gc3luY2hyb25vdXM9InRydWUiIHZlcnNpb249IjEuMyI+CiAgICA8YmxvY2sg&#13;
+dGl0bGU9InZhcmlhYmxlcyIgbGFiZWw9IkRhdGFiYXNlIEFkYXB0ZXIgSW5wdXQsIE91dHB1dCwg&#13;
+YW5kIExvY2FsIFZhcmlhYmxlcyIgaGlkZGVuPSJmYWxzZSI+CiAgICA8L2Jsb2NrPgogICAgPGJs&#13;
+b2NrIHRpdGxlPSJzdGF0ZW1lbnRzIiBsYWJlbD0iU1FMIFN0YXRlbWVudCBEZWZpbml0aW9ucyIg&#13;
+aGlkZGVuPSJ0cnVlIj4KICAgICAgICA8cGFyYW0gbmFtZT0ic3FsLmNvdW50IiBhY2Nlc3M9IkhJ&#13;
+RERFTiIgbGFiZWw9IiIgdHlwZT0iamF2YS5sYW5nLkludGVnZXIiIHZhbHVlPSIwIi8+CiAgICA8&#13;
+L2Jsb2NrPgo8L2NvbmZpZ2Zvcm0+Cg==
+</File>
+    </Configuration>
+  </ExternalWS>
+  <Link Name="Connection 1" default="true" webbpaID="1424326674650">
+    <Label>Connection 1</Label>
+    <Source cp="1">Start</Source>
+    <Point x="96.0" y="222.0"/>
+    <Point x="144.0" y="222.0"/>
+    <Target cp="3">Activity 1</Target>
+  </Link>
+  <Link Name="Connection 2" default="true" webbpaID="1424326674649">
+    <Label>Connection 2</Label>
+    <Source cp="1">Activity 1</Source>
+    <Point x="252.0" y="222.0"/>
+    <Point x="276.0" y="222.0"/>
+    <Target cp="3">Activity 2</Target>
+  </Link>
+  <Link Name="Connection 3" default="true" webbpaID="1424326674648">
+    <Label>Connection 3</Label>
+    <Source cp="1">Activity 2</Source>
+    <Point x="384.0" y="222.0"/>
+    <Point x="420.0" y="222.0"/>
+    <Target cp="3">End 1</Target>
+  </Link>
+  <Dataslot Name="sampleBO" category="User" name="sampleBO" type="demo.Address" webbpaID="1424326674652">
+    <DataType>OBJECT</DataType>
+    <DataValue>com.progress.bo.demo.Address</DataValue>
+    <IsPublic>true</IsPublic>
+    <BizManageAccessFlag>false</BizManageAccessFlag>
+    <Access type="PUBLIC" value="true"/>
+    <Access type="BIZ_MANAGE_ACCESS" value="false"/>
+    <Access type="GLOBAL" value="false"/>
+    <Access type="BIZ_SITE_COLUMN" value="false"/>
+  </Dataslot>
+  <Performers>
+    <Performer name="@CREATOR" type="user" webbpaID="1424326674642"/>
+    <Performer category="DBAdapters" class="com.savvion.sbm.adapters.db.DBAdapter" generate="false" id="Activity 2" managed="true" name="GenericDBAdapter" type="managed" webbpaID="1424326674651"/>
+  </Performers>
+  <TabularViewWorkstepOrder/>
+  <History>
+    <Created as="test_bpm" by="sinavolu" on="1424326674837">Thu Feb 19 11:47:54 IST 2015</Created>
+  </History>
+  <Repository/>
+  <Forms/>
+</Process>

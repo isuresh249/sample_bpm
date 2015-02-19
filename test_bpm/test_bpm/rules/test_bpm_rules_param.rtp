@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE parameters SYSTEM "resources/ruleParams.dtd">
+<parameters>
+    <macro class="com.savvion.rulewizard.data.DateMacro"
+        name="generate_date" type="date">
+        <property name="minute"><![CDATA[28]]></property>
+        <property name="second"><![CDATA[40]]></property>
+        <property name="month"><![CDATA[1]]></property>
+        <property name="year"><![CDATA[2015]]></property>
+        <property name="hour"><![CDATA[14]]></property>
+        <property name="day"><![CDATA[19]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.MacroString"
+        name="application" type="text">
+        <property name="verify"><![CDATA[true]]></property>
+        <property name="stringValue"><![CDATA[test_bpm]]></property>
+        <property name="origValue"><![CDATA[]]></property>
+    </macro>
+    <macro class="com.savvion.rulewizard.data.SaveRuleMacro"
+        name="module" type="module">
+        <property name="stringValue"><![CDATA[C:/Users/sinavolu.PROGRESS/Progress/Developer Studio 4.3.1/workspace/test_bpm/test_bpm/rules/test_bpm_rules.bps]]></property>
+        <reference name="program" value=""/>
+        <reference name="application" value="test_bpm"/>
+        <reference name="prefix" value=""/>
+    </macro>
+</parameters>
