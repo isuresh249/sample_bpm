@@ -23,7 +23,7 @@
   <Author>sinavolu</Author>
   <Version/>
   <Attributes>
-    <Attribute name="ProcessType" required="true">
+    <Attribute name="ProcessType" required="false">
       <Label>Process Type</Label>
       <Description>Type of the process</Description>
       <Value>BusinessProcess</Value>
@@ -317,12 +317,12 @@ L2Jsb2NrPgo8L2NvbmZpZ2Zvcm0+Cg==
 </File>
     </Configuration>
   </ExternalWS>
-  <Link Name="Connection 1" default="true" webbpaID="1424326674650">
-    <Label>Connection 1</Label>
-    <Source cp="1">Start</Source>
-    <Point x="96.0" y="222.0"/>
-    <Point x="144.0" y="222.0"/>
-    <Target cp="3">Activity 1</Target>
+  <Link Name="Connection 3" default="true" webbpaID="1424326674648">
+    <Label>Connection 3</Label>
+    <Source cp="1">Activity 2</Source>
+    <Point x="384.0" y="222.0"/>
+    <Point x="420.0" y="222.0"/>
+    <Target cp="3">End 1</Target>
   </Link>
   <Link Name="Connection 2" default="true" webbpaID="1424326674649">
     <Label>Connection 2</Label>
@@ -331,12 +331,12 @@ L2Jsb2NrPgo8L2NvbmZpZ2Zvcm0+Cg==
     <Point x="276.0" y="222.0"/>
     <Target cp="3">Activity 2</Target>
   </Link>
-  <Link Name="Connection 3" default="true" webbpaID="1424326674648">
-    <Label>Connection 3</Label>
-    <Source cp="1">Activity 2</Source>
-    <Point x="384.0" y="222.0"/>
-    <Point x="420.0" y="222.0"/>
-    <Target cp="3">End 1</Target>
+  <Link Name="Connection 1" default="true" webbpaID="1424326674650">
+    <Label>Connection 1</Label>
+    <Source cp="1">Start</Source>
+    <Point x="96.0" y="222.0"/>
+    <Point x="144.0" y="222.0"/>
+    <Target cp="3">Activity 1</Target>
   </Link>
   <Dataslot Name="sampleBO" category="User" name="sampleBO" type="demo.Address" webbpaID="1424326674652">
     <DataType>OBJECT</DataType>
